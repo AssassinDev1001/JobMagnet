@@ -1,0 +1,66 @@
+<div class="container" style="padding-top:20px;max-width:1000px;">
+  <form action="/createprofile" method="post">
+
+
+  <br /><br /> 
+
+<div id="split_form">
+
+  <div class="row">
+      <div class="col-md-1">    </div>
+    <div class="col-md-10" style="margin-bottom:100px;">
+
+      <div class="alert alert-warning" role="alert">
+        <strong>Felmeddelande:</strong> {{error}}
+      </div>
+
+            <div id="form5" style=" text-align:left;color:#FFF;">
+               <center>
+                <div style="max-width:1000px; text-align:left;">
+
+                <div class="form-group">
+                  <h3 class="form-label">Ange kontaktuppgifter:</h3>
+                  <br />
+                  E-post: <input type="email" class="form-control" name="email" value="{{session.email}}" required>
+                  <br />
+                  Telefon: <input type="text" class="form-control" name="telefon"  value="{{session.telefon}}" required>
+                  <br />
+                  <hr />
+                  <h5 class="form-label">Lösenord till panelenför att hålla koll på dina grejer:</h5>
+
+                  Lösenord: <input type="password" class="form-control" name="password" required>
+                  <br />
+                  Bekräfta lösenord: <input type="password" class="form-control" name="password2" required>
+                  <br />
+
+                </div>
+                <table><tr><td>
+                <input type="submit" class="btn btn-success" value="SLUTFÖR" />
+              </td><td><div id="saved5" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+                </div>
+              </center>
+            </div>
+
+
+    </div>
+    <div class="col-md-1">    </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+    <hr />
+
+
+
+</form>
+
+</div>

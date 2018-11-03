@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/select2.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="container" style="max-width:1000px;">
+      <a class="navbar-brand" href="/">
+        <img src="/img/logo.png" style="max-height:35px;" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://app.jobbmagnet.se" style="color:#BBB;font-size:16px;">Logga in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+    {{{body}}}
+
+  </body>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/select2.min.js"></script>
+  <script>
+
+      $('#cats').select2( );
+      $('#komunn').select2();
+      $('#cats2').select2();
+
+      //STAD
+      function showValuesCity() {
+        $( "#stads" ).html(' ');
+        $.each( $( "#komunn" ).val(), function( key, value ) {
+          $( "#stads" ).append( " <span style='padding:5px; margin-bottom:40px;'>" + value + "</span> " );
+        });
+      }
+
+      //KATEGORIER
+      function showValuesCat() {
+        $( "#cats_t" ).html(' ');
+        $.each( $( "#cats" ).val(), function( key, value ) {
+          $( "#cats_t" ).append( " <span style='padding:5px; margin-bottom:40px;'>" + value + "</span> " );
+        });
+      }
+
+      $( "#komunn" ).change( function(){
+        showValuesCity();
+        $("#nasta1").fadeIn();
+      } );
+      $( "#cats" ).change( function(){
+        showValuesCat ();
+        $("#nasta2").fadeIn();
+      });
+      showValuesCity();
+      showValuesCat();
+
+
+
+      $('#komunn').change(function(){
+        $('#nasta1').fadeIn();
+        console.log(   $('#komunn').val()  );
+      });
+
+
+      $('#andra_stad').click(function(){
+          $('#saved').fadeIn( "normal", function() {
+              $('#split_form').hide();
+              $('#form1' ).fadeIn( );
+              $('#form2' ).hide( );
+              $('#form3' ).hide( );
+              $('#form4' ).hide( );
+              $('#form5' ).hide( );
+              $('#home' ).fadeIn( );
+              $('#profile' ).hide( );
+              $('#saved').hide();
+              $('#saved2').hide();
+              $('#kortkort' ).hide( );
+          });
+          return false;
+      });
+      $('#andra_cats').click(function(){
+          $('#saved').fadeIn( "normal", function() {
+              $('#split_form').fadeIn();
+              $('#form1' ).hide( );
+              $('#form2' ).fadeIn( );
+              $('#form3' ).hide( );
+              $('#form4' ).hide( );
+              $('#form5' ).hide( );
+              $('#home' ).hide( );
+              $('#profile' ).fadeIn( );
+              $('#saved').hide();
+              $('#saved2').hide();
+              $('#cats_profile').hide();
+              $('#kortkort' ).hide( );
+          });
+          return false;
+      });
+      $('#andra_erf').click(function(){
+          $('#saved').fadeIn( "normal", function() {
+              $('#split_form').fadeIn();
+              $('#form1' ).hide( );
+              $('#form2' ).hide( );
+              $('#form3' ).fadeIn( );
+              $('#form4' ).hide( );
+              $('#form5' ).hide( );
+              $('#home' ).hide( );
+              $('#profile' ).fadeIn( );
+              $('#saved').hide();
+              $('#saved2').hide();
+              $('#erf').hide();
+              $('#kortkort' ).hide( );
+          });
+          return false;
+      });
+
+      $('#andra_kortkort').click(function(){
+          $('#saved').fadeIn( "normal", function() {
+              $('#split_form').fadeIn();
+              $('#form1' ).hide( );
+              $('#form2' ).hide( );
+              $('#form3' ).hide( );
+              $('#form4' ).fadeIn( );
+              $('#form5' ).hide( );
+              $('#home' ).hide( );
+              $('#profile' ).fadeIn( );
+              $('#saved').hide();
+              $('#saved2').hide();
+              $('#kortkort').hide();
+          });
+          return false;
+      });
+
+
+
+      $('#nasta1').click(function(){
+        //console.log($('#komunn').val());
+        if($('#komunn').val().length > 0){
+          $('#saved').fadeIn( "normal", function() {
+            $('#saved').fadeOut( function(){
+              $('#split_form').fadeIn();
+              $('#saved').hide();
+              $('#saved2').hide();
+              $('#form1' ).hide( );
+              $('#form2' ).fadeIn( );
+              $('#steg' ).html('2');
+              $('#home' ).hide( );
+              $('#profile' ).fadeIn( );
+            });
+          });
+          return false;
+        }else{
+          return false;
+        }
+      });
+
+      $('#nasta2').click(function(){
+        if($('#cats').val().length > 0){
+        $('#saved2').fadeIn(  function() {
+            $( "#jobb-each" ).html('');
+            $( "#erf_t" ).html('');
+            $.each( $( "#cats" ).val(), function( key, value ) {
+              $( "#jobb-each" ).append( " Antal år erfaranhet som "+ value.toLowerCase() + ": <input type='number' class='form-control' id='erf-"+key+"' value='0' style='max-width:90px;'/> <br />" );
+              console.log(value);
+            });
+            //S
+            $('#saved').hide();
+            $('#home' ).hide( );
+            $('#saved2').hide();
+            $('#form2' ).hide( );
+            $('#form3' ).fadeIn( );
+            $('#steg' ).html('3');
+            $('#split_form').fadeIn();
+            $('#cats_profile').fadeIn();
+            $('#profile' ).fadeIn( );
+        });
+        return false;
+      }else{
+        return false;
+      }
+    });
+
+    $('#nasta3').click(function(){
+        $('#saved3').fadeIn( "normal", function() {
+          $('#saved3').fadeOut( function(){
+            //$( "#jobb-each" ).html('');
+            $( "#erf_t" ).html('');
+            $.each( $( "#cats" ).val(), function( key, value ) {
+              var numstr = ($('#erf-'+key).val() === undefined ? '0' :  $('#erf-'+key).val() );
+              console.log(key +" / " + value + " // ---- "+ '#erf-'+key +" ---- "+ $('#erf-'+key).val() );
+              $( "#erf_t" ).append( "<span style='padding:5px; margin-bottom:40px;'>"+  numstr  + " år erfaranhet som "+ value.toLowerCase() + "</span>" );
+              console.log(value);
+            });
+            $('#split_form').fadeIn();
+            $('#saved').hide();
+            $('#saved2').hide();
+            $('#saved3').hide();
+            $('#form3' ).hide( );
+            $('#form4' ).fadeIn( );
+            $('#steg' ).html('4');
+            $('#home' ).hide( );
+            $('#profile' ).fadeIn( );
+            $('#erf' ).fadeIn( );
+          });
+        });
+        return false;
+    });
+
+    $('#kortkort_ja').click(function(){
+        $('#saved').fadeIn( "normal", function() {
+          $('#saved').fadeOut( function(){
+            $('#split_form').fadeIn();
+            $('#saved').hide();
+            $('#saved4').hide();
+            $('#saved5').hide();
+            $('#form4' ).hide( );
+            $('#form5' ).fadeIn( );
+            $('#steg' ).html('5');
+            $('#home' ).hide( );
+            $('#profile' ).fadeIn( );
+            $('#erf' ).fadeIn( );
+
+            $('#kortkort_t').html('Ja');
+            $('#kortkort' ).fadeIn( );
+          });
+        });
+        return false;
+    });
+    $('#kortkort_nej').click(function(){
+        $('#saved').fadeIn( "normal", function() {
+          $('#saved').fadeOut( function(){
+            $('#split_form').fadeIn();
+            $('#saved').hide();
+            $('#saved4').hide();
+            $('#saved5').hide();
+            $('#form4' ).hide( );
+            $('#form5' ).fadeIn( );
+            $('#steg' ).html('5');
+            $('#home' ).hide( );
+            $('#profile' ).fadeIn( );
+            $('#erf' ).fadeIn( );
+
+            $('#kortkort_t').html('Nej');
+            $('#kortkort' ).fadeIn( );
+          });
+        });
+        return false;
+    });
+    $('#kortkort_sen').click(function(){
+        $('#saved').fadeIn( "normal", function() {
+          $('#saved').fadeOut( function(){
+            $('#split_form').fadeIn();
+            $('#saved').hide();
+            $('#saved4').hide();
+            $('#saved5').hide();
+            $('#form4' ).hide( );
+            $('#form5' ).fadeIn( );
+            $('#steg' ).html('5');
+            $('#home' ).hide( );
+            $('#profile' ).fadeIn( );
+            $('#erf' ).fadeIn( );
+
+            $('#kortkort_t').html('Kanske senare');
+            $('#kortkort' ).fadeIn( );
+          });
+        });
+        return false;
+    });
+
+
+  </script>
+</html>

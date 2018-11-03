@@ -1,0 +1,192 @@
+<div class="container" style="padding-top:20px;max-width:1000px;">
+  <form action="/skapakonto" method="post">
+
+
+  <br /><br /> 
+<center>
+
+    <div id="form1" style="text-align:left;color:#FFF;">
+      <center>
+    <h1 style="font-size: 1.9em;">Sluta slösa din tid på förnedrande arbetssökning</h1>
+    <p>
+      Du behöver inte jaga arbetsgivare längre. Vi ser till att dem tävlar om dig istället.
+      <br />
+    </p>
+    <p style="color:#FFF; "><small>
+      Enda nackdelen: Det kostar en tia. Vill du ha jobb eller en cheeseburgare? 🍔
+    </small></p>
+  </center>
+
+    <br />
+       <center>
+        <div style="max-width:600px; text-align:left;">
+        <div class="form-group">
+          <label class="form-label">Vart vill du jobba?</label>
+          <br />
+          <select name="komunn" class="form-control" id="komunn" multiple="multiple" style="width:100%;">
+          {{#each komunn}}
+            <option style="color:#000;">{{this}}</option>
+          {{/each}}
+          </select>
+        </div>
+        <table><tr><td>
+        <a href="#" class="btn btn-success" id="nasta1" style="display:none;">NÄSTA</a>
+      </td><td><div id="saved" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+        </div>
+
+
+      </center>
+    </div>
+
+
+
+<div style="display:none;" id="split_form">
+
+  <div class="row">
+    <div class="col-md-8" style="margin-bottom:100px;">
+
+          <div id="form2" style="display:none;text-align:left;color:#FFF;">
+                     <center>
+                      <div style="max-width:1000px; text-align:left;">
+
+                      <div class="form-group">
+                        <h3 class="form-label" >Vad vill du jobba som?</h3>
+                        <label>Välj en eller flera yrkeskategorier</label>
+                        <br />
+                        <select name="cats" class="form-control" id="cats" multiple="multiple" style="width:100%;">
+                        {{#each cats}}
+                          <option>{{this}}</option>
+                        {{/each}}
+                        </select>
+                      </div>
+                      <table><tr><td>
+                      <a href="#" class="btn btn-success" id="nasta2" style="display:none;">NÄSTA</a>
+                    </td><td><div id="saved2" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+                      </div>
+                    </center>
+            </div>
+
+            <div id="form3" style="display:none;text-align:left;color:#FFF;">
+               <center>
+                <div style="max-width:1000px; text-align:left;">
+
+                <div class="form-group">
+                  <h3 class="form-label">Lite om dina erfarenheter</h3>
+                  <br />
+
+                  <div id="jobb-each"></div>
+
+                </div>
+                <table><tr><td>
+                <a href="#" class="btn btn-success" id="nasta3" >NÄSTA</a>
+              </td><td><div id="saved3" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+                </div>
+              </center>
+            </div>
+
+            <div id="form4" style="display:none;text-align:left;color:#FFF;">
+               <center>
+                <div style="max-width:1000px; text-align:left;">
+
+                <div class="form-group">
+
+                  <h3 class="form-label">Har du körkot?</h3>
+                  <br />
+
+                  <a href="#ja" id="kortkort_ja" class="btn btn-success">JA</a>
+                  <a href="#nej" id="kortkort_nej" class="btn btn-primary">NEJ</a>
+                  <a href="#sen" id="kortkort_sen" class="btn btn-primary">FUNDERAR PÅ ATT SKAFFA</a>
+
+                </div>
+                <table><tr><td>
+                <a href="#" class="btn btn-success" id="nasta4" style="display:none;">NÄSTA</a>
+              </td><td><div id="saved4" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+                </div>
+              </center>
+            </div>
+
+            <div id="form5" style="display:none;text-align:left;color:#FFF;">
+               <center>
+                <div style="max-width:1000px; text-align:left;">
+
+                <div class="form-group">
+                  <h3 class="form-label">Ange kontaktuppgifter:</h3>
+                  <br />
+                  E-post: <input type="email" class="form-control" name="email" required>
+                  <br />
+                  Telefon: <input type="text" class="form-control" name="telefon" required>
+                  <br />
+                  <hr />
+                  <h5 class="form-label">Lösenord till panelenför att hålla koll på dina grejer:</h5>
+
+                  Lösenord: <input type="password" class="form-control" name="password" required>
+                  <br />
+                  Bekräfta lösenord: <input type="password" class="form-control" name="password2" required>
+                  <br />
+
+                </div>
+                <table><tr><td>
+                <input type="submit" class="btn btn-success" value="SLUTFÖR" />
+              </td><td><div id="saved5" style="display:none;">&nbsp;&nbsp;&nbsp;<img src="/img/check.png" class="img-fluid" style="max-height:18px;" /></div></td></tr></table>
+                </div>
+              </center>
+            </div>
+
+
+    </div>
+    <div class="col-md-4">
+      <div id="profile" style="margin-top:10px; display:none;text-align:left; padding:15px; background: rgba(0, 0, 0, 0.5) ; border-radius:8px;">
+        <h1 style="font-weight:normal; font-size: 1.7em; color:#FFF;" class="text-center">Din sökprofil</h1>
+        <p style="font-size:12px;" class="text-center">Steg <span id="steg">1</span> av 5</p>
+
+          <div class="form-group" style="color:#FFF;">
+            <label>Jag vill jobba i</label><br />
+            <span id="stads"></span>
+            <br />
+            <a href="#" id="andra_stad">(ändra)</a>
+          </div>
+
+          <div class="form-group" id="cats_profile" style="display: none; color:#FFF;">
+            <label>Som</label><br />
+            <span id="cats_t"></span>
+            <br />
+            <a href="#" id="andra_cats">(ändra)</a>
+            <hr />
+          </div>
+
+          <div class="form-group" id="erf" style="display: none; color:#FFF;">
+            <label>Erfarenhet:</label><br />
+            <span id="erf_t"></span>
+            <br />
+            <a href="#" id="andra_erf">(ändra)</a>
+            <hr />
+          </div>
+
+          <div class="form-group" id="kortkort" style="display: none; color:#FFF;">
+            <label>Körkort:</label><br />
+            <span id="kortkort_t"></span>
+            <br />
+            <a href="#" id="andra_kortkort">(ändra)</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+    <hr />
+
+
+
+</form>
+
+</div>

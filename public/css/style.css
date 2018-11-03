@@ -1,0 +1,70 @@
+
+@font-face {
+    font-family: OpenSans;
+    src: url("/fonts/OpenSans-Regular.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Varela;
+    src: url("/fonts/Varela-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'SF-REGULAR';
+    src: url("/fonts/sf/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'SF-HEAVY';
+    src: url("/fonts/sf/SF-Pro-Display-Semibold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'SF-B';
+    src: url("/fonts/sf/SF-Pro-Display-Bold.otf") format("opentype");
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .mob {
+    display: none;
+  }
+}
+
+body {
+  height:100%;
+  font-size: 15px;
+  font-family: OpenSans;
+
+  /*background: url(/img/bg.jpg);*/
+  background: url(/img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+p {
+  font-size: 16px;
+  font-family: OpenSans;
+  color:#FFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: OpenSans;
+  color:#FFF;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #FF8000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.navbar-default .navbar-toggler .navbar-toggler-icon .icon-bar {
+  background-color:#FFF !important;
+}
+ 

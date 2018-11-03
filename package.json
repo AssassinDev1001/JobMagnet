@@ -1,0 +1,28 @@
+{
+  "name": "jobbmagnet2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "2checkout-node": "0.0.1",
+    "body-parser": "~1.15.2",
+    "compression": "^1.7.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "express-session": "^1.15.6",
+    "hbs": "~4.0.1",
+    "md5": "^2.2.1",
+    "mongo-sanitize": "^1.0.0",
+    "mongoose": "^5.3.2",
+    "mongoose-express-session": "0.0.5",
+    "morgan": "~1.7.0",
+    "nl2br": "0.0.3",
+    "nodemailer": "^4.6.8",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "serve-favicon": "~2.3.0",
+    "validator": "^10.8.0"
+  }
+}

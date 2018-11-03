@@ -1,0 +1,189 @@
+<script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+
+<div class="container" style="padding-top:20px;max-width:1000px;">
+<br /><br />
+<center>
+<div  id="split_form">
+  <div class="row">
+    <div class="col-md-8" style="margin-bottom:100px;">
+          <div id="form2" style=" text-align:left;color:#FFF;">
+                  <center>
+                  <div style="max-width:1000px; text-align:left;">
+                    <h3 class="form-label" >Betala 10kr <font size=1><strike>199kr/mån</strike></font> </h3>
+                    <br />
+                    <p>
+                      Spara massor av tid och öka snabbt dina chanser till att hitta ett jobb.
+                    Jobbmagnet hjälper dig söka att till hundratals lediga jobb som matchar din sökprofil
+                    och vårt kundservice-team besvarar dig samt ger dig personlig rådgivning.
+
+                    Registrera dig idag utan någon bidningstid och få tillgång till:
+                    <br /><br />
+                  </p>
+
+
+
+                  <form action="/betalning/pay" method="post" id = 'myCCForm'>
+
+                            <div id="cardbox">
+                            <font size=4 color=#FFF>Betala <span class="underline_green">säkert</span> med   <img src="/img/visa_master.png" height="36"/></font>
+                          <br /> <br />
+                                  <div class="form-group " >
+                                    <div class="form-group " >
+                                          <span  style="color:#fff;">Konto: <a href="/logout">Inte du?</a></span> <br />
+                                          <input type="text" name="email" class="form-control" value="{{session.email}}" style="background:#BDBDBD;color:#424242; width:100%;"  disabled/>
+                                    </div>
+                                      <span  style="color:#fff;">Kortnummer:</span> <br />
+                                      <input type="type" id = 'ccNo' name="card" class="form-control" placeholder="Kortnummer..."  size="20" style="width:100%;" required/>
+                                  </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                          <span style="color:#fff;">Utgångsdatum:</span>
+                                        <select  class="form-control" id='expMonth' name="month" style="width:100%;"   required>
+                                            <option value = '01'>01</option>
+                                            <option value = '02'>02</option>
+                                            <option value = '03'>03</option>
+                                            <option value = '04'>04</option>
+                                            <option value = '05'>05</option>
+                                            <option value = '06'>06</option>
+                                            <option value = '07'>07</option>
+                                            <option value = '08'>08</option>
+                                            <option value = '09'>09</option>
+                                            <option value = '10'>10</option>
+                                            <option value = '11'>11</option>
+                                            <option value = '12'>12</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-4"><br >
+                                        <select  class="form-control" style="width:100%;" id='expYear' name="year"  required>
+                                            <option value='18'>2018</option>
+                                            <option value='19'>2019</option>
+                                            <option value='20'>2020</option>
+                                            <option value='21'>2021</option>
+                                            <option value='22'>2022</option>
+                                            <option value='23'>2023</option>
+                                            <option value='24'>2024</option>
+                                            <option value='25'>2025</option>
+                                            <option value='26'>2026</option>
+                                            <option value='27'>2027</option>
+                                            <option value='28'>2028</option>
+                                            <option value='29'>2029</option>
+                                            <option value='30'>2030</option>
+                                            <option value='31'>2031</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-1"></div>
+                                      <div class="col-md-3 ">
+                                        <span style="color:#fff;">Säkerhetskod:</span>
+                                        <input type="type" id='cvv' name="cvv" placeholder="CVV"  class="form-control" style="width:100%;"  required/>
+
+                                      </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="email" value="{{session.email}}" />
+                                <font size=1 color=#bbb>
+                                  När du klickar på 'Betala 10kr' godkänner du våra <a href="/villkor">allmänna villkor</a>.
+                                </font> <br />
+
+
+                                <input type="submit" name="submit" value="BETALA 10KR" class="btn  btn-success btn--round"/>
+
+                                </div>
+                              </form>
+                    <br />
+                </div>
+                </center>
+            </div>
+
+    </div>
+    <div class="col-md-4">
+      <div id="profile" style="margin-top:10px;  text-align:left; padding:15px; background: rgba(0, 0, 0, 0.5) ; border-radius:8px;">
+        <h1 style="font-weight:normal; font-size: 1.3em; color:#FFF;" class="text-center">Detta ingår</h1>
+
+          <ul  style="color:#FFF; list-style-type: none;padding-left:0px; margin-top:15px; font-size:14px;">
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Över 127 000 lediga jobb</li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> 20 gånger större chans att du hittar ett jobb</li>
+
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Sök till hundratals lediga jobb med ett knapptryck</li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Automatiserad jobbsökning </li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Håll koll på vilka jobb du har sökt till</li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Svar direkt till din e-post</li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Tillgång till vår snabbt tillgängliga kuntjänst</li>
+            <li><font color="green"><i class="fa fa-check" aria-hidden="true" style="color:green;"></i></font> Säg upp när du vill</li>
+          </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+    <hr />
+</div>
+<script>
+    // Called when token created successfully.
+    var successCallback = function(data) {
+        var myForm = document.getElementById('myCCForm');
+
+        // Set the token as the value for the token input
+        myForm.token.value = data.response.token.token;
+
+        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
+        myForm.submit();
+    };
+
+    // Called when token creation fails.
+    var errorCallback = function(data) {
+        if (data.errorCode === 200) {
+            tokenRequest();
+        } else {
+            alert(data.errorMsg);
+        }
+    };
+
+    var tokenRequest = function() {
+        // Setup token request arguments
+        var args = {
+            sellerId: "203836295",
+            publishableKey: "5F8B0C55-CBF4-460F-BE0D-4EF2B2231C32",
+            ccNo: $("#ccNo").val(),
+            cvv: $("#cvv").val(),
+            expMonth: $("#expMonth").val(),
+            expYear: $("#expYear").val()
+        };
+
+        // Make the token request
+        TCO.requestToken(successCallback, errorCallback, args);
+    };
+
+    $(function() {
+        // Pull in the public encryption key for our environment
+        TCO.loadPubKey('sandbox');
+
+        $("#myCCForm").submit(function(e) {
+            // Call our token request function
+            tokenRequest();
+
+            // Prevent form from submitting
+            return false;
+        });
+    });
+
+    var successCallback = function(data) {
+        var myForm = document.getElementById('myCCForm');
+
+        // Set the token as the value for the token input
+        myForm.token.value = data.response.token.token;
+
+        // IMPORTANT: Here we call `submit()` on the form element directly instead of using jQuery to prevent and infinite token request loop.
+        myForm.submit();
+    };
+
+    var errorCallback = function(data) {
+        if (data.errorCode === 200) {
+            tokenRequest();
+        } else {
+            alert(data.errorMsg);
+        }
+    };
+</script>
